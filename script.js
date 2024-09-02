@@ -1,24 +1,23 @@
-//your JS code here. If required.
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
+const container = document.querySelector('.container');
+
+for (let i = 0; i < 800; i++) {
+    // Create a new square element
+    const square = document.createElement('div');
+    square.classList.add('square');
     
-    for (let i = 0; i < 800; i++) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-        container.appendChild(square);
-    }
+    // Optionally, you can add random colors when the square is displayed
+    // square.style.backgroundColor = getRandomColor();
+    
+    // Append the square to the container
+    container.appendChild(square);
+}
 
-    const squares = document.querySelectorAll('.square');
-
-    squares.forEach(square => {
-        square.addEventListener('mouseenter', () => {
-            square.style.transition = 'background-color 0.5s ease'; // Apply transition
-        });
-
-        square.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-                square.style.backgroundColor = '#fff'; // Reset color after 1 second
-            }, 1000); // 1 second delay to match transition
-        });
-    });
-});
+// Optional: Function to generate random colors
+// function getRandomColor() {
+//     const letters = '0123456789ABCDEF';
+//     let color = '#';
+//     for (let i = 0; i < 6; i++) {
+//         color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+// }
